@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dali Haeusler</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+	<div class="parallax-banner">
+		<div id="fg"></div>
+		<div id="mountains" data-offset="0.3" class="layer" ></div>
+		<div id="para-text" data-offset="0.7" class="layer" >Welcome, the journey starts here</div>
+		<div id="forrest" data-offset="0.1" class="layer" ></div>
+		<img id="traveller" data-offset="-0.3" class="layer" src="./public/travekker-clip.png">
+
+	</div>
+	<section></section>
+	<section></section>
+	<section></section>
+	<section></section>
+	<section></section>
+	<section></section>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+  <script>
+
+  var layers = [],
+      layerElements = document.getElementsByClassName('layer'),
+      _scrollY = window.scrollY;
+
+    function init() {
+      for (var i = 0; i < layerElements.length; i += 1) {
+        var el = layerElements[i];
+        var offset = layerElements[i].dataset.offset;
+        layers.push({el: el, y: 0, offset: offset});
+      }
+
+      window.addEventListener('scroll', handle_scroll);
+      requestAnimationFrame(animate);
+    }
+
+    function handle_scroll(e) {
+      _scrollY = window.scrollY;
+      //animateTween();
+    }
+
+    /*
+    function animateTween() {
+      for (var i = 0; i < layers.length; i += 1) {
+        var oldY = layers[i].y;
+        layers[i].y = _scrollY * layers[i].offset;
+        //if (oldY !== layers[i].y) {
+          TweenMax.to(layers[i].el, 0.5, {
+            y: layers[i].y,
+            overwrite: 'all'
+          });
+        //}
+      }
+    }
+    */
+
+    function animate() {
+      //_scrollY = window.scrollY;  //for mobile only?
+
+      for (var i = 0; i < layers.length; i += 1) {
+        var oldY = layers[i].y;
+        layers[i].y = _scrollY * layers[i].offset;
+
+        if (oldY !== layers[i].y) {
+          layers[i].el.style.transform = 'translateY(' + layers[i].y + 'px)';
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    init();
+  </script>
+</html>
