@@ -4,68 +4,181 @@ body{
 	margin: 0;
 }
 
-.parallax-banner{
-width: 100%;
-height: 100vh;
-background-color: #274938;
-position: relative;
+a{
+	text-decoration: none;
+	color: none;
 }
 
-#para-text{
-	font-size: 40px;
-	top: 20%;
-	right: 40%;
-	background-color: #fff;
-	padding: 20px;
-	bottom: auto;
-    font-family: sans-serif;
-    border-radius: 10px;
-}
+/*Parallax*/
+	#scroll-button-container{
+		width: 100%;
+		position: fixed;
+		display: flex;
+		justify-content: center;
+		z-index: 100;
+		bottom: 5%;
 
-.layer{
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	 will-change: transform;
-	 background-position: bottom;
-}
+	}
 
-#fg{
-	height: 100%;
+	#scroll-down-button{
+		border: 2px #fff solid;
+		border-radius: 50%;
+		padding: 20px;
+		color:#fff;
+		font-size: 15px;
+		animation: blinker 5s linear infinite;
+	}
+
+
+	@keyframes blinker {
+	  50% {
+	    opacity: 20%;
+	  }
+	}
+
+	.parallax-banner{
 	width: 100%;
-	background: linear-gradient(to bottom, #757abf 0%,#8583be 60%,#eab0d1 100%);
-background-attachment: fixed;
-}
-#forrest{
+	height: 100vh;
+	background-color: #274938;
+	position: relative;
+	}
+
+	#para-box-links{
+		display: flex;
+		width: 100%;
+
+	}
+	#para-box-links div{
+		padding-right:15px;
+		font-size: 20px;
+	}
+
+	#para-box-links div:hover{
+		font-size: 23px;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.para-box-link-about a{
+		color: purple;
+	}
+
+	.para-box-link-projects{
+		color: blue;
+	}
+
+	.para-box-link-collab{
+		color: orange;
+	}
+	#para-box{
+		font-size: 40px;
+		top: 20%;
+		right: 40%;
+		background-color: #fff;
+		padding: 20px;
+		bottom: auto;
+	    font-family: sans-serif;
+	    border-radius: 10px;
+	}
+
+
+
+	.layer{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		 will-change: transform;
+		 background-position: bottom;
+	}
+
+	#fg{
 		height: 100%;
-	width: 100%;
-	background-repeat-y: no-repeat;
-	background-image: url(./public/forrest-clip.PNG);
-	background-position: bottom;
-	background-size: 
-}
+		width: 100%;
+		background: linear-gradient(to bottom, #757abf 0%,#8583be 60%,#eab0d1 100%);
+	background-attachment: fixed;
+	}
+	#forrest{
+			height: 100%;
+		width: 100%;
+		background-repeat-y: no-repeat;
+		background-image: url(./public/forrest-clip.PNG);
+		background-position: bottom;
+		pointer-events: none;
 
-#mountains{
-	height: 100%;
-	width: 100%;
-	background-repeat-y: no-repeat;
-	background-position: center;
-	background-image: url(./public/mountains-clip.png);
-}
+	}
 
-#traveller{
-}
-section{
+	#mountains{
+		height: 100%;
+		width: 100%;
+		background-repeat-y: no-repeat;
+		background-position: center;
+		background-image: url(./public/mountains-clip.png);
+	}
+
+	#traveller{
+	}
+
+
+/*About*/
+	#about{
+		font-family: monospace;
+		color: white;
+	}
+
+	#about #about-offcut{
+		text-align: right;
+		float: right;
+		font-size: 20px;
+		width: 50%;
+	}
+
+	#about #about-offcut span{
+		font-size: 40px;
+	}
+
+	#about-blurb{
+		font-size: 20px;
+		width: 50%;
+	}
+
+
+
+/*Sections*/
+	section{
       position: relative;
-      height: 500px;
+      height: 100%;
       background-color: #274938;
     }
 
+    .section-container{
+    	padding: 30px 0;
+    	width: 90%;
+    	margin:0 auto;
+    }
 
-@media only screen and (max-width: 600px) {
-  #para-text{
-		font-size: 30px;
-		right : 10%;
-		margin-left: 20px;
+    .section-header{
+		color : white;
+		font-size: 50px;
+		font-family: monospace;
 	}
+
+
+
+@media only screen and (max-width: 910px) {
+  
+	/*Parallax*/
+		#para-box{
+			font-size: 30px;
+			right : 10%;
+			margin-left: 20px;
+		}
+
+	/*ABOUT*/
+		#about-offcut{
+			display: none;
+		}
+
+		#about-blurb{
+			width: 100%;
+		}
 }
