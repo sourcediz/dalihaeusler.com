@@ -60,11 +60,11 @@ a{
 	}
 
 	.para-box-link-about a{
-		color: purple;
+		color: #274938;
 	}
 
-	.para-box-link-projects{
-		color: blue;
+	.para-box-link-projects a{
+		color: #ff5722;
 	}
 
 	.para-box-link-collab{
@@ -118,6 +118,28 @@ a{
 	#traveller{
 	}
 
+/*Sections*/
+	section{
+      position: relative;
+      height: 100%;
+      background-color: #274938;
+    }
+
+    section:nth-child(2){
+    	background-color: #ff5722;
+    }
+
+    .section-container{
+    	padding: 30px 0;
+    	width: 90%;
+    	margin:0 auto;
+    }
+
+    .section-header{
+		color : white;
+		font-size: 50px;
+		font-family: monospace;
+	}
 
 /*About*/
 	#about{
@@ -141,26 +163,8 @@ a{
 		width: 50%;
 	}
 
+/*Projects*/
 
-
-/*Sections*/
-	section{
-      position: relative;
-      height: 100%;
-      background-color: #274938;
-    }
-
-    .section-container{
-    	padding: 30px 0;
-    	width: 90%;
-    	margin:0 auto;
-    }
-
-    .section-header{
-		color : white;
-		font-size: 50px;
-		font-family: monospace;
-	}
 
 
 
